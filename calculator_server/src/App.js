@@ -12,7 +12,6 @@ app.use(function(req, res, next) {
 
 var routes=require('./routes/index');
 
-
 app.set('view engine','ejs');
 
 routes(app);

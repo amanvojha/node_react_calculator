@@ -15,13 +15,11 @@ var data ={
 };
 const reducer = (state=data, action) =>{
 
-	console.log('Inside reducer');
 	
-
 	switch(action.type){
 		
 		case "SET1":{
-			console.log('SET 1 :' + action.payload);
+			
 			return Object.assign({}, state, {
 						num1: action.payload
 					})
@@ -30,7 +28,7 @@ const reducer = (state=data, action) =>{
 		}
 
 		case "SET2":{
-			console.log('SET 2 :' + action.payload);
+			
 			return Object.assign({}, state, {
 						num2: action.payload
 					})
@@ -39,30 +37,17 @@ const reducer = (state=data, action) =>{
 			break;
 		}
 
-		case "ADD":{
-			console.log('ADD Action');
-			console.log('Num1 : ' + state.num1);
-			console.log('Num2 : ' + state.num2);
-			var digit1 = state.num1;
-			var digit2 = state.num2;
+		case "ASSIGN":{
 
-			axios.get('http://localhost:3002/cal', {
-				params: {
-			    		digit1,digit2
-				}
-			  })
-			  .then(function (response) {
-			  		console.log('OUTPUT : ' + response.data.output);
-			  		Object.assign({}, state, {
-						result: response.data.output
+			
+			return Object.assign({}, state, {
+						result: action.payload
 					})
-			    console.log(response.data.output);
-			  })
-			  .catch(function (error) {
-			    console.log(error);
-  			  });
-			return state; 
+
+			break;
+
 		}
+
 	}
 	return state;
 }
@@ -72,22 +57,5 @@ const middleware = applyMiddleware(promise() , thunk , logger());
 var combine = combineReducers({reducer});
 
 const store = createStore(combine, middleware);
-
-//store.dispatch({type:"TEST", payload:1});
-
-
-/*axios.get('http://localhost:3002/cal', {
-	params: {
-    		num1:1,
-    		num2:3
-	}
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });*/
-
 
 export default store;

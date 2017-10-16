@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.btn-margin {
+  margin-right: 10px;
+  width:110px;
+}
+
+.form {
+  margin-top: 25px;
+}
