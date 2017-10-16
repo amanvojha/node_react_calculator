@@ -2,8 +2,20 @@
 
 A simple calculator app made using React for the front end and calculations are done in the backend using Node.
 
+To run : Client:
+
+Go to calculator_client folder
+run npm_install
+run npm_start
+Server:
+
+Go to calculator_server folder
+run npm_install
+run nodemon App.js
+
 *Development Log
 
 1. App in development phase. Basic setup done.
 2. Updated folder structure. Distributed server and client side codes.
 3. Coded for Addition function to test.
+4. Final version
