@@ -4,13 +4,13 @@ A simple calculator app made using React for the front end and calculations are 
 
 To run : Client:
 
-1. Go to dropbox_client folder
+1. Go to calculator_client folder
 2. run npm_install
 3. run npm_start
 
 Server:
 
-1. Go to dropbox_server folder
+1. Go to calculator_server folder
 2. run npm_install
 3. run nodemon App.js
 
